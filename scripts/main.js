@@ -1,12 +1,36 @@
 const canvas = document.getElementById("main");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
 const ctx = canvas.getContext("2d");
 
-ctx.fillText("Hey, Ironhacker! 200, 50");
-ctx.font = "48px sans serif";
+const cWidth = canvas.width;
+const cHeight = canvas.height;
 
-function draw() {
-  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-}
+ctx.font = "48px sans-serif";
+ctx.fillStyle = "black";
+ctx.fillText("Click enter", 400, 50);
+
+let words = [
+  {
+    answer: "mind",
+    hint: "https://i.kym-cdn.com/entries/icons/facebook/000/002/232/bullet_cat.jpg",
+  },
+  "alone",
+  "ironhack",
+  "web",
+  "lisbon",
+];
+
+const startGameBtn = document.getElementById("button-start");
+
+let game = new Game(words, ctx);
+
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Enter" && !game.isRunning) {
+    game.start();
+  } else {
+    game.checkKey(e.key);
+  }
+});
+
+/* startGameBtn.addEventListener('click', () => {
+  
+}) */
