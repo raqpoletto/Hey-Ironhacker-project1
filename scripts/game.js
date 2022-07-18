@@ -55,6 +55,21 @@ class Game {
     this.displayTentativas();
   };
 }
+resetGame = () => {
+  this.ctx.clearRect(0, 0, 1000, 500);
+  if (erros >= 5) {
+    this.ctx.font = "32px sans serif";
+    this.ctx.fillStyle = "black";
+    this.ctx.fillText("Try again", 200, 100);
+    return;
+  }
+  if (this.acertos === this.words.length) {
+    this.ctx.font = "32px sans serif";
+    this.ctx.fillStyle = "black";
+    this.ctx.fillText("You won", 200, 100);
+    return;
+  }
+};
 
 /* const canvas = document.getElementById("main"); */
 /* canvas.width = window.innerWidth;
