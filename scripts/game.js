@@ -43,20 +43,6 @@ class Game {
     this.tentativas.push(this.currentAnswer);
   }
 
-  checkGameOver = () => {
-    let gameOver = this.errorsLeft === 0;
-    if (gameOver) setTimeout(() => this.winner(), 900);
-    return winner ? true : false;
-  };
-
-  checkLoss = () => {
-    if (this.errors === 5) {
-      this.stop();
-      this.ctx.fillStyle = "red";
-      this.ctx.fillRect(0, 0, 1000, 500);
-    }
-  };
-
   displaySentence() {
     this.ctx.clearRect(0, 0, 1000, 500);
     this.ctx.font = "32px Chakra Petch";
@@ -68,7 +54,7 @@ class Game {
   }
 
   displayHint() {
-    this.ctx.drawImage(this.img, 10, 330, 200, 200);
+    this.ctx.drawImage(this.img, 10, 310, 200, 200);
   }
 
   displayText() {
@@ -77,15 +63,40 @@ class Game {
     this.ctx.fillText(hiddenWord, 700, 100);
   }
 
-  checkWin = () => {
+  checkForNextLevel = () => {
     if (this.currentAnswer.length === 0) {
       this.sentences.push(this.words[this.level].sentence);
       this.sentences.push(this.words[this.level].answer);
-      this.ctx.fillStyle = "green";
-      this.ctx.fillRect(0, 0, 1000, 500);
+      /*    this.ctx.fillStyle = "green";
+      this.ctx.fillRect(0, 0, 1000, 500); */
       if (this.level < 4) {
         this.nextLevel();
       }
+    }
+  };
+  /*  checkGameOver = () => {
+    let gameOver = this.errorsLeft === 0;
+    if (gameOver) setTimeout(() => this.winner(), 900);
+    return winner ? true : false;
+  }; */
+
+  checkLoss = () => {
+    if (this.errors === 5) {
+      this.stop();
+      this.ctx.clearRect(0, 0, 1000, 500);
+      this.ctx.font = "32px Chakra Petch";
+      this.ctx.fillStyle = "white";
+      this.ctx.fillText("You lost! Press ENTER to start again.", 250, 250);
+    }
+  };
+
+  checkWin = () => {
+    if (this.errorsLeft < 5 && this.currentAnswer === this.words.answer) {
+      this.stop();
+      this.ctx.clearRect(0, 0, 1000, 500);
+      this.ctx.font = "32px Chakra Petch";
+      this.ctx.fillStyle = "white";
+      this.ctx.fillText("You won!!!", 250, 250);
     }
   };
 
@@ -100,8 +111,15 @@ class Game {
   displayTentativas() {
     let allTentativas = this.tentativas.join("-");
     this.ctx.font = "20px Chakra Petch";
+    this.ctx.fillStyle = "white";
     this.ctx.fillText("You tried: " + allTentativas, 700, 450);
   }
+
+  wordHint = () => {
+    this.ctx.font = "20px Chakra Petch";
+    this.ctx.fillStyle = "white";
+    this.ctx.fillText("Hint", 80, 340);
+  };
 
   updateGame = () => {
     this.ctx.clearRect(0, 0, 1000, 500);
@@ -111,11 +129,12 @@ class Game {
     //this.checkTypedLetters()
 
     this.displaySentence();
-    this.checkWin();
+    this.checkForNextLevel();
     this.checkLoss();
     //this.displayText();
     this.displayHint();
     this.displayTentativas();
+    this.wordHint();
   };
 }
 
