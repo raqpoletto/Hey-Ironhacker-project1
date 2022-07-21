@@ -1,14 +1,86 @@
-/* .button-start {
-  visibility: hidden; }*/
-/* isso deve acontecer somente quando troco de frame */
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Poiret+One&display=swap");
+
 body {
-  background-color: #6d6e72;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 20px;
+  margin: 30px;
+  padding: 0px;
+  background-image: url("https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80");
+  color: gainsboro;
 }
 
-#main {
-  background-image: url("https://as1.ftcdn.net/v2/jpg/00/95/81/66/1000_F_95816634_mEJHD6BqSwHl7dNix8FTYIF4I5vLUEK7.jpg");
-  padding: auto;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+#display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 706px;
+  row-gap: 30px;
+}
+
+button {
+  background-color: #060912;
+  border: 2px solid rgb(104, 37, 219, 0.7);
+  color: gainsboro;
+  font-size: 0.7rem;
+  margin: 5px;
+  padding: 5px;
+  width: 100px;
+}
+
+#instructionTxt {
+  width: 35%;
+  text-align: justify;
+  background-color: #060912;
+  padding: 10px 20px;
+  display: none;
+  position: relative;
+  left: -65px;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 32px;
+  background-color: rgb(8, 9, 14, 0.1);
+  border: 3px solid rgb(104, 37, 219, 0.4);
+  margin-top: 100px;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+  top: -350px;
+}
+
+p {
+  color: gainsboro;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+#gameover {
+  display: none;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+  top: -350px;
+}
+
+#gameoverTxt {
+  font-size: 1rem;
 }

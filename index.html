@@ -12,12 +12,31 @@
 
 <body>
 
-  <canvas id="main" width="1000" height="500" style="border: 2px solid black;"></canvas>
+  <div id="display">
 
+    <div id="info">
+      <h1>
+        👩‍💻
+      </h1>
+      <button id="instructionBtn">Instruction</button>
+    </div>
 
+    <p id="instructionTxt">Look at the hints to find the word... <br> Press ENTER to restart the game. Good luck!</p>
 
-  <script src="scripts/game.js"></script>
-  <script src="scripts/main.js"></script>
+    <div id="game">
+      <canvas id="canvas" width="1000" height="500"></canvas>
+      <div id="title">
+        <!--  <p>Press ENTER to start.</p> -->
+      </div>
+    </div>
+
+    <div id="gameover">
+      <p id="gameoverTxt">Gameover</p>
+    </div>
+
+    <script src="./scripts/game.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>

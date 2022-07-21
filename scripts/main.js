@@ -1,24 +1,21 @@
-const canvas = document.getElementById("main");
+const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-/* const cWidth = canvas.width;
-const cHeight = canvas.height; */
-
-ctx.font = "48px sans-serif";
+/* ctx.font = "48px sans-serif";
 ctx.fillStyle = "black";
 ctx.fillText("Click enter", 400, 50);
-ctx.fillText("Click space to restart", 400, 100);
+ctx.fillText("Click space to restart", 400, 100); */
 
 //fazer loop para passar para outro objeto
 let words = [
   {
     answer: "mind",
-    hint: "https://www.puzzlegamemaster.com/wp-content/uploads/2020/06/MIND-160x160.jpg",
+    hint: "./docs/assets/images/hint1.png",
     sentence: "Hey, ironhacker! What's on your ",
   },
   {
     answer: "alone",
-    hint: "https://www.puzzlegamemaster.com/wp-content/uploads/2020/06/ALONE-160x160.jpg",
+    hint: "./docs/assets/images/hint2-removebg-preview.png",
     sentence: "Don't code all ",
   },
   {
@@ -52,26 +49,17 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// to start
-/* document.addEventListener("keydown", (e) => {
-  if (e.code === "Enter" && !game.isRunning) {
-    game.start();
-    game.checkKey(e.key);
-    game.checkTypedLetters(e.key, 20);
-  } else {
-    game.checkTypedLetters(e.key, 20);
-    game.checkKey(e.key);
+window.addEventListener("keydown", (e) => {
+  if (game && game.isRunning) {
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
+      if (game.currentAnswer.indexOf(e.key.toString()) >= 0) {
+        game.currentAnswer.splice(game.currentAnswer.indexOf(e.key), 1);
+        game.acertos++;
+        game.tentativas.push(e.key);
+      } else {
+        game.errors++;
+        game.tentativas.push(e.key);
+      }
+    }
   }
 });
-
-// to restart
-document.addEventListener("keydown", (e) => {
-  if (e.code === "Space" && game.isRunning) {
-    game.restart();
-    game.checkKey(e.key);
-    game.checkTypedLetters(e.key, 20);
-  } else {
-    game.checkKey(e.key);
-    game.checkTypedLetters(e.key, 20);
-  }
-}); */
