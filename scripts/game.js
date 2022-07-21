@@ -94,7 +94,7 @@ class Game {
     this.levelReset();
     this.currentAnswer = this.words[this.level].answer.split("");
     this.currentHint = this.words[this.level].hint;
-    img.src = this.currentHint;
+    this.img.src = this.currentHint;
   };
 
   displayTentativas() {

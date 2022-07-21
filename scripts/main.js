@@ -15,7 +15,7 @@ let words = [
   },
   {
     answer: "alone",
-    hint: "./docs/assets/images/hint2-removebg-preview.png",
+    hint: "../docs/assets/images/hint2-removebg-preview.png",
     sentence: "Don't code all ",
   },
   {
