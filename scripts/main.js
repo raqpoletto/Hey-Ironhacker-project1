@@ -15,22 +15,22 @@ let words = [
   },
   {
     answer: "alone",
-    hint: "../docs/assets/images/hint2-removebg-preview.png",
+    hint: "./docs/assets/images/hint2.png",
     sentence: "Don't code all ",
   },
   {
     answer: "parties",
-    hint: "https://www.puzzlegamemaster.com/wp-content/uploads/2020/06/PARTIES-160x160.jpg",
+    hint: "./docs/assets/images/hint3-removebg-preview.png",
     sentence: "We know you are missing the summer and the ",
   },
   {
     answer: "lisbon",
-    hint: "",
+    hint: "./docs/assets/images/hint4.png",
     sentence: " is waiting for you, little dev.",
   },
   {
     answer: "around",
-    hint: "https://www.puzzlegamemaster.com/wp-content/uploads/2020/06/AROUND-160x160.jpg",
+    hint: "./docs/assets/images/hint5.png",
     sentence: "dont know yet",
   },
 ];
