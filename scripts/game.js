@@ -45,11 +45,9 @@ class Game {
 
   displaySentence() {
     this.ctx.clearRect(0, 0, 1500, 450);
-    this.ctx.font = "10px Chakra Petch";
+    this.ctx.font = "40px Chakra Petch";
     this.ctx.fillStyle = "white";
-    let sentence =
-      this.sentences.join() + " " + this.words[this.level].sentence;
-    this.ctx.fillText(sentence, 30, 100);
+    this.ctx.fillText(this.words[this.level].sentence, 50, 100);
   }
 
   displayHint() {
