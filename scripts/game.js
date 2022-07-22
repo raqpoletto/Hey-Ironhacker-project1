@@ -24,7 +24,7 @@ class Game {
   };
 
   restart = () => {
-    this.ctx.clearRect(0, 0, 1000, 500);
+    this.ctx.clearRect(0, 0, 1500, 450);
     this.isRunning = true;
   };
 
@@ -44,24 +44,23 @@ class Game {
   }
 
   displaySentence() {
-    this.ctx.clearRect(0, 0, 1000, 500);
-    this.ctx.font = "32px Chakra Petch";
+    this.ctx.clearRect(0, 0, 1500, 450);
+    this.ctx.font = "10px Chakra Petch";
     this.ctx.fillStyle = "white";
     let sentence =
       this.sentences.join() + " " + this.words[this.level].sentence;
-
-    this.ctx.fillText(sentence, 100, 100);
+    this.ctx.fillText(sentence, 30, 100);
   }
 
   displayHint() {
-    this.ctx.drawImage(this.img, 10, 310, 200, 200);
+    this.ctx.drawImage(this.img, 10, 250, 200, 200);
   }
 
-  displayText() {
+  /* displayText() {
     this.ctx.fillStyle = "white ";
     let hiddenWord = "_ ".repeat(this.currentAnswer.length);
     this.ctx.fillText(hiddenWord, 700, 100);
-  }
+  } */
 
   checkForNextLevel = () => {
     if (this.currentAnswer.length === 0) {
@@ -110,16 +109,25 @@ class Game {
 
   displayTentativas() {
     let allTentativas = this.tentativas.join("-");
-    this.ctx.font = "20px Chakra Petch";
+    this.ctx.font = "22px Chakra Petch";
     this.ctx.fillStyle = "white";
-    this.ctx.fillText("You tried: " + allTentativas, 700, 450);
+    this.ctx.fillText("You tried: " + allTentativas, 700, 400);
   }
 
   wordHint = () => {
     this.ctx.font = "20px Chakra Petch";
     this.ctx.fillStyle = "white";
-    this.ctx.fillText("Hint", 80, 340);
+    this.ctx.fillText("Hint", 80, 280);
   };
+  /* 
+  mainSound() {
+    let audioTag = new Audio(
+      "./docs/assets/sounds/[Official] Celeste Original Soundtrack - 03 - Resurrections [TubeRipper.com].m4a"
+    );
+
+    audioTag.play();
+    audioTag.loop = true;
+  } */
 
   updateGame = () => {
     this.ctx.clearRect(0, 0, 1000, 500);
@@ -135,6 +143,7 @@ class Game {
     this.displayHint();
     this.displayTentativas();
     this.wordHint();
+    /* this.mainSound(); */
   };
 }
 

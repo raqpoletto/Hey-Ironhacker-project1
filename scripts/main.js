@@ -11,27 +11,27 @@ let words = [
   {
     answer: "mind",
     hint: "./docs/assets/images/hint1.png",
-    sentence: "Hey, ironhacker! What's on your _ _ _ _?",
+    sentence: "Hey, ironhacker! What's on your",
   },
   {
     answer: "alone",
     hint: "./docs/assets/images/hint2.png",
-    sentence: "Hey, ironhacker! What's on your mind ? Don't code all .",
+    sentence: " || Don't code all ",
   },
   {
     answer: "parties",
     hint: "./docs/assets/images/hint3-removebg-preview.png",
-    sentence: "We know you are missing the summer and the .",
+    sentence: " || We know you are missing the summer and the ",
   },
   {
     answer: "lisbon",
     hint: "./docs/assets/images/hint4.png",
-    sentence: ". is waiting for you, little dev",
+    sentence: " || Are you enjoying the beautiful ",
   },
   {
     answer: "around",
     hint: "./docs/assets/images/hint5.png",
-    sentence: "Now that you have learned javascript there is no turn .",
+    sentence: " || Now that you have learned javascript there is no turn ",
   },
 ];
 
